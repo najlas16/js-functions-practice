@@ -59,3 +59,10 @@ export function areAllNumsEven(numbers) {
     }
     return true;
 }
+
+// returns the biggest num in between 2 arrays
+export function maxInArr(arr1, arr2) {
+    const maxArr1 = arr1.reduce((accumulator, currentVal) => Math.max(accumulator, currentVal), 0);
+    const maxArr2 = arr2.reduce((accumulator, currentVal) => Math.max(accumulator, currentVal), 0);
+    return Math.max(maxArr1, maxArr2);
+}

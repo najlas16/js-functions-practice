@@ -82,3 +82,9 @@ test('all nums are even', () => {
     expect(functions.areAllNumsEven([2, 4, 6, 8])).toBe(true);
     expect(functions.areAllNumsEven([12, 22, 1, 40])).toBe(false);
 })
+
+// largest num in 2 arrays
+test('get largest sum in 2 arrays', () => {
+    expect(functions.maxInArr([7, 2, 9],[15, 28, 42])).toBe(42);
+    expect(functions.maxInArr([4, 1, 11],[0, 1, 5])).toBe(11);
+})
