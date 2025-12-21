@@ -66,3 +66,45 @@ export function maxInArr(arr1, arr2) {
     const maxArr2 = arr2.reduce((accumulator, currentVal) => Math.max(accumulator, currentVal), 0);
     return Math.max(maxArr1, maxArr2);
 }
+
+// returns longest string in array. if there are multiple with the same max length, return the first one
+export function arrayOfStrings(arr) {
+    if (arr.length === 0) return '';
+    let longest = '';
+    for (const str of arr) {
+        if (typeof str === 'string' && str.length > longest.length) {
+            longest = str;
+        }
+    }
+    return longest;
+}
+
+// receives 2 params (msg and step) and returns new string composed of all characters from msg that are on positions divisible by step
+export function charAtStep(msg, step) {
+    let result = '';
+    for (let i = 0; i < msg.length; i += step) {
+        result += msg.charAt(i);
+    }
+    return result;
+}
+
+// returns the string that has the most occurrences of a character amongst strings
+export function mostRepeat(char, ...strings) {
+    let maxCount = 0;
+    let maxString = strings[0];
+
+    for (const str of strings) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+            if (str.charAt(i) === char) {
+                count ++
+            }
+        }
+        if (count > maxCount) {
+            maxCount = count;
+            maxString = str;
+        }
+    }
+
+    return maxString;
+}

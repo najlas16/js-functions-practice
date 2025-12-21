@@ -88,3 +88,19 @@ test('get largest sum in 2 arrays', () => {
     expect(functions.maxInArr([7, 2, 9],[15, 28, 42])).toBe(42);
     expect(functions.maxInArr([4, 1, 11],[0, 1, 5])).toBe(11);
 })
+
+// longest string in array
+test('get longest string in array', () => {
+    expect(functions.arrayOfStrings(['Montgomery', 'Juneau', 'Phoneix', 'Little Rock', 'Washington, D.C.', 'Hartford', 'Tallahassee'])).toBe('Washington, D.C.');
+})
+
+// character at step
+test('grab character at step in message', () => {
+    expect(functions.charAtStep('Which framework should I choose?', 6)).toBe('Wfoo e');
+    expect(functions.charAtStep('abcdefgh', 3)).toBe('adg');
+})
+
+// most occurrences of char in strings
+test ('string with most occurrences of a character', () => {
+    expect(functions.mostRepeat('a', 'Los Angeles', 'Tokyo')).toBe('Los Angeles');
+})
