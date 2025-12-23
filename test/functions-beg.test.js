@@ -101,6 +101,32 @@ test('grab character at step in message', () => {
 })
 
 // most occurrences of char in strings
-test ('string with most occurrences of a character', () => {
+test('string with most occurrences of a character', () => {
     expect(functions.mostRepeat('a', 'Los Angeles', 'Tokyo')).toBe('Los Angeles');
+})
+
+// job matches employee object
+describe('new array of employees that match job', () => {
+    test('empty array if input is not array', () => {
+        expect(functions.getJob('abc', 'developer')).toEqual([]);
+    })
+
+    test('returns new array of jobs that match job', () => {
+        expect(functions.getJob([
+            { age: 28, job: "developer", name: "Alice" },
+            { age: 35, job: "designer", name: "Bob" },
+            { age: 42, job: "manager", name: "Charlie" },
+            { age: 31, job: "developer", name: "David" }
+        ], 'developer')).toEqual([
+            { age: 28, job: "developer", name: "Alice" },
+            { age: 31, job: "developer", name: "David" }
+        ]);
+    })
+})
+
+// ascending or descending array
+test('ascending array', () => {
+    expect(functions.isSorted([19, 20, 23])).toBe(false);
+    expect(functions.isSorted([19, 20, 21])).toBe(true);
+    expect(functions.isSorted([20, 19, 18])).toBe(true);
 })

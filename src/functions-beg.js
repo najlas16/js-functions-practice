@@ -62,8 +62,10 @@ export function areAllNumsEven(numbers) {
 
 // returns the biggest num in between 2 arrays
 export function maxInArr(arr1, arr2) {
-    const maxArr1 = arr1.reduce((accumulator, currentVal) => Math.max(accumulator, currentVal), 0);
-    const maxArr2 = arr2.reduce((accumulator, currentVal) => Math.max(accumulator, currentVal), 0);
+    const maxArr1 = arr1.reduce((accumulator, currentVal) => 
+        Math.max(accumulator, currentVal), 0);
+    const maxArr2 = arr2.reduce((accumulator, currentVal) => 
+        Math.max(accumulator, currentVal), 0);
     return Math.max(maxArr1, maxArr2);
 }
 
@@ -107,4 +109,35 @@ export function mostRepeat(char, ...strings) {
     }
 
     return maxString;
+}
+
+// receives an array of employees as params and returns a new array with all employees that match the job
+export function getJob(employees, job) {
+    if (!Array.isArray(employees)) return [];
+
+    const newArr = [];
+    for (const emp of employees) {
+        if (emp && emp.job === job) {
+            newArr.push(emp);
+        }
+    }
+    
+    return newArr;
+}
+
+// checks if items in the array is in ascending or descending order
+export function isSorted(arr) {
+    if (arr.length < 2) return true;
+
+    let ascending = true;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] - arr[i - 1] !== 1) ascending = false;
+    }
+
+    let descending = true;
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i - 1] - arr[i] !== 1) descending = false;
+    }
+    
+    return ascending || descending;
 }
